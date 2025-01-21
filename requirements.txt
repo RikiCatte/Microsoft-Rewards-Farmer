@@ -1,0 +1,5 @@
+requests
+ipapi
+selenium-wire
+undetected_chromedriver
+blinker==1.7.0
