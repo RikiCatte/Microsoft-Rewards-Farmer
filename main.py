@@ -22,12 +22,11 @@ def main():
     notifier = Notifier(args)
     loadedAccounts = setupAccounts()
     for currentAccount in loadedAccounts:
-        while true:
+        while True:
             try:
                 executeBot(currentAccount, notifier, args)
                 break
             except urllib3.exceptions.ReadTimeoutError as e:
-                attempt += 1
                 logging.error(f"ReadTimeoutError: {e}. Retrying executeBot().")
                 time.sleep(30)
             except Exception as e:
